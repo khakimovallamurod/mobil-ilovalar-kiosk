@@ -70,8 +70,7 @@
   function appSlide(a) {
     const shots = a.shots.length
       ? a.shots.map((s, i) => {
-          const tall = s.h / s.w > 1.6;
-          return `<div class="shot${i === 0 ? " on" : ""}${tall ? " fill" : ""}"><div class="blur" style="background-image:url('${s.src}')"></div><img src="${s.src}" alt="${esc(a.name)} ${i + 1}" loading="lazy"></div>`;
+          return `<div class="shot${i === 0 ? " on" : ""}"><div class="blur" style="background-image:url('${s.src}')"></div><img src="${s.src}" alt="${esc(a.name)} ${i + 1}" loading="lazy"></div>`;
         }).join("")
       : `<div class="empty">${iconHtml(a)}<b>${esc(a.name)}</b></div>`;
     const dots = a.shots.length > 1 ? a.shots.map((_, i) => `<i class="${i === 0 ? "on" : ""}"></i>`).join("") : "";
